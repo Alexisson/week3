@@ -6,7 +6,7 @@
             async function fetchtext(){
                 let Response = await fetch(document.getElementById("inp").value);
                 document.getElementById("inp").value = '';
-                document.getElementById("inp").value = Response.text();
+                document.getElementById("inp").value = await Response.text();
             }
         </script>
     </body>
