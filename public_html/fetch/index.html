@@ -3,10 +3,10 @@
         <input type="text" id="inp">
         <button id="bt" onclick="fetchtext();"></button>
         <script>
-            function fetchtext(){
-                let Response = fetch(document.getElementById("inp").value)
-                .then(Response=>Response.text())
-                .then(document.getElementById("inp").value = Response);
+            async function fetchtext(){
+                let Response = await fetch(document.getElementById("inp").value);
+                document.getElementById("inp").value = '';
+                document.getElementById("inp").value = Response.text();
             }
         </script>
     </body>
