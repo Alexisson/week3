@@ -4,8 +4,9 @@
         <button id="bt" onclick="fetchtext();"></button>
         <script>
             function fetchtext(){
-                let Response = fetch(document.getElementById("inp").value);
-                document.getElementById("inp").value = Response.text();
+                let Response = fetch(document.getElementById("inp").value)
+                .then(Response=>Response.text())
+                .then(document.getElementById("inp").value = Response);
             }
         </script>
     </body>
