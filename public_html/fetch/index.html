@@ -1,1 +1,13 @@
-function task(x) { return x*this*this; }
+<html>
+    <body>
+        <input type="text" id="inp">
+        <button id="bt" onclick="fetchtext();"></button>
+        <script>
+            function fetchtext(){
+                let Response = fetch(document.getElementById("inp").value);
+                document.getElementById("inp").value = Response.text();
+            }
+        </script>
+    </body>
+
+</html>
